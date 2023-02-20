@@ -6,7 +6,7 @@
 # Project Documentation
 ## Welcome to [Friends of Earth](https://feb-2023-hackathon.herokuapp.com/)
 
-### The mission of our website is to act as an NGO directory, where users can find information about many different NGOs worldwide, and be directed to more information about each one if they choose. It is easy it is simple, all in one website. The present documentation will provide information to understanding the core design principles that enabled the development of the project. More specifically, details regarding the UX/UI development, application testing and deployment, bug fixes and the planned future features for the project.
+### The mission of our website is to act as an NGO directory, where users can find information about many different NGOs worldwide, and be directed to more information about each one if they choose. It is easy and it is simple, all in one website. The present documentation will provide information to understanding the core design principles that enabled the development of the project. More specifically, details regarding the UX/UI development, application testing and deployment, bug fixes and the planned future features for the project.
 
 ## [Link to website](https://feb-2023-hackathon.herokuapp.com/)
 ---
@@ -71,19 +71,19 @@ This project is aimed at anyone who wants to know more about NGOs worldwide. If 
 
 ## User Stories
 
-- To immediately determine the purpose of the site, so can quickly decide whether or not to stay.
+- To immediately determine the purpose of the site, so the user can quickly decide whether or not to stay.
 - To be able to see a clear contrast between foreground and background.
 - To be able to easily access the site on a variety of devices - desktop, tablet, mobile.
 - To be able to browse a variety of different NGOs in one place.
 - To be able to read an overview of each NGO, e.g., purpose, founder and date it was founded, current director, location, etc.
 - To be able to visit each NGO's website directly (opens in new tab).
-- To be able to get random NGO's if i dont know what to search for.
+- To be able to get random NGOs if i dont know what to search for.
 - To find out information about World NGO day and when it is.
-- To be able to search by name an NGO.
-- To be able to contact someone from team if i would like more detailed inormation.
-- To be able to leave my message or inquiries might have as user.
-- To be able to understand what is about this site.
-- To be able to easily access contact details or social pages.
+- To be able to search by the name of an NGO.
+- To be able to contact someone from the team if more detailed information is desired.
+- To be able to leave a message or any inquiries one might have as a user.
+- To be able to understand what this site is about.
+- To be able to easily access contact details or social media pages.
 
 # Wireframes
 
@@ -123,15 +123,23 @@ Created using [Figma](https://www.figma.com/) (click to expand)
 - At the top of every page allows for easy site navigation.
 -  Makes it clear to the user how they can access different pages or to return to a previous page without relying on browser forward/back buttons.
 
+![Navbar](documentation/screenshots/nav-bar.png)
+
 ### Search bar
 
 - Allows users to search for a specific element on the website, e.g., if they are looking for information on a particular NGO.
+
+![Search bar](documentation/screenshots/search-bar.png)
 
 ### Homepage
 
 - Displays a slideshow of three random NGOs from the directory, above a button to check out more NGOs which takes the user to the directory page. This is above the fold so it is the first thing a user will see when visiting the site.
 - Slideshow is over a hero image of a landscape, which clearly relates to the site name 'Friends of Earth' and also to environmental NGOs.
 - It also features a short explanation of World NGO Day - when it is and what NGOs are.
+
+![Homepage slideshow](documentation/screenshots/homepage-slideshow.png)
+
+![Homepage NGO day explanation](documentation/screenshots/homepage-ngo-day.png)
 
 ### Directory (NGOs) page
 
@@ -143,6 +151,8 @@ Created using [Figma](https://www.figma.com/) (click to expand)
     - External link to the NGO's site (opens in a new tab so the user can easily navigate back to our site)
 - The user can navigate between the directory pages by using the 'first', 'previous', 'next' and 'last' buttons at the bottom of the screen.
 
+![Directory page](documentation/screenshots/directory.png)
+
 ### Contact page
 
 - Features a short description of reasons a user might want to get in touch with us.
@@ -150,23 +160,34 @@ Created using [Figma](https://www.figma.com/) (click to expand)
 - User can fill out a form with their contact details and message, which will go to our database and allows us to get in touch with them to reply.
 - Contact details and form are over a hero image of the Earth as seen from space, again relating to the site name 'Friends of Earth' but a different take on it, to provide variety and also to focus more on the worldwide/global aspect of the site.
 
+![Contact info](documentation/screenshots/contact-info.png)
+
+![Contact form](documentation/screenshots/contact-form.png)
+
 ### Random page
 
 - Takes the user to a page with information about a random NGO in our database.
+
+![Random page](documentation/screenshots/random-page.png)
 
 ### About us page
 
 - Explains who we are and why our website was created, along with images relating to different types of NGO.
 
+![About us page](documentation/screenshots/about-us-page.png)
+
 ### Footer
 
 - Features Copyright, team name and social media links to feature at the bottom of every page.
 
+![Footer](documentation/screenshots/footer.png)
+
 ### Favicon
 
 - Favicon is generated using favicon.io.
+- It was made using the site logo.
 
-
+![Favicon](documentation/screenshots/logo-favicon.png)
 
 # Technologies Used
 
@@ -174,7 +195,6 @@ Created using [Figma](https://www.figma.com/) (click to expand)
   * Python, for basic Django framework, database management
   * HTML structure of the site.
   * CSS style site
-
 
 ### Tools and Frameworks
   * GitHub, host platform and version control
@@ -234,7 +254,7 @@ Changes and entries to the workspace were then committed and pushed to this Gith
 All bugs are fixed, there are no bugs left to fix. 
 
 # Testing
-A number of manual tests were carried out on this porject:
+A number of manual tests were carried out on this project:
 - All nav links on nav bar work.
 - Search bar works showing the results.
 - External links work.
