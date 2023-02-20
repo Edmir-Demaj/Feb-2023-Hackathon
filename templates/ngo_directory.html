@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row mt-5 card-container card-container-top">
         {% for ngo in object_list %}
-        <div class="card ngo-card">
+        <div class="card ngo-card shadow-lg">
             {% if "placeholder" in ngo.image.url %}
             <img src="https://res.cloudinary.com/adamboley/image/upload/v1664390648/ozkmx0djgq9rf1f7rksi.jpg"
                 class="d-block w-100 card-img-top index-image" alt="image of a cat" aria-label="image of a cat">
@@ -51,7 +51,7 @@
 
     {% for i in page_obj.paginator.page_range %}
         {% if page_obj.number == i %}
-            <li class="page-item m-1"><a href="#" class="page-link directory-pag-a">{{ i }}<span class="sr-only">(current)</span></a></li>
+            <li class="page-item m-1 active"><a href="#" class="page-link directory-pag-a">{{ i }}<span class="sr-only">(current)</span></a></li>
         {% else %}
             <li class="page-item m-1"><a class="page-link directory-pag-a" href="?page={{ i }}">{{ i }}</a></li>
         {% endif %}
