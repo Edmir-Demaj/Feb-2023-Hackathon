@@ -25,7 +25,7 @@
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse mb-3" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item mr-10">
                     <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
@@ -53,16 +53,16 @@
         </div>
     </nav>
 
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0 pb-5">
         {% block content %}
         <!-- content is injected here -->
         {% endblock %}
     </main>
 
-    <footer class="container-fluid footer mt-auto py-3 text-center stick-bottom">
+    <footer class="container-fluid footer mt-auto py-3 text-center fixed-bottom">
         <div class="row">
             <div class="col-4 footer-element">
-                <p><i class="fa-regular fa-copyright"></i> Copywright 2023</p>
+                <p><i class="fa-regular fa-copyright"></i> Copyright 2023</p>
             </div>
             <div class="col-4 footer-element">
                 <p>Coders of Throne</p>
