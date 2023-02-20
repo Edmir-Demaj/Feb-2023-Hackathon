@@ -171,16 +171,83 @@ Created using [Figma](https://www.figma.com/) (click to expand)
 
 # Function
 
-
-
 This section documents how Django was used to set up the project
+
+## Models
+
+The project's `models.py` file contains 2 models - NGO and Message.
+
+### NGO
+
+The NGO model is the primary model for the project, used to store information about Non-Governmental Organisations. It has several fields.
+
+- name, a CharField, for recording the name of the NGO
+- type, an IntegerField with choices supplied by an external tuple of tuples, for recording the sector the NGO operates in
+- founded, a DateField, for recording the founding date of the NGO
+- founders, a CharField, for recording the person or persons who set up the NGO
+- director, a CharField, for recording the current director of the NGO
+- staff, an IntegerField, for recording the number of direct employees of the NGO
+- region, an IntegerField with choices supplied by an external tuples of tuples, for recording the region in which the NGO operates
+- location, a CharField, for recording the location where the NGO is based
+- headquarters, a Charfield, for recording the address of the headquarters of the NGO
+- website, a URLField, for recording the website of the NGO 
+- image, a CloudinaryField, for uploading an image of the NGO, such as a logo
+- purpose, a CharField, for recording the stated purpose of the NGO
+- description, a TextField, for recording what the NGO does
+
+### Message
+
+The Message model is a secondary model for the project. It is not directly used, but is instead used to dynamically generate a form for accepting user input via the Contact page. It has 4 fields:
+- first_name, a CharField for recording a user's first name
+- last_name, a CharField, for recording a user's second name
+- email_address, an EmailField, for recording a user's email address
+- message, a TextField, for recording a user's message
+
+## Forms
+
+The project's `forms.py` file contains the MessageForm class, which is a companion to the Message model. It is used to create a form for use in the Contact page View. This form is modified to use the Bootstrap form-control class, which makes the form nice to use.
+
+## Views
+
+The project's `views.py` file contains the Views necessary to render the project's pages. These are several views:
+
+### LandingPage
+The LandingPage view constructs a queryset from 3 rows of the NGO table, and renders the landing page from the `index.html` template
+
+### NGO Directory
+The NGO_Directory view constructs a queryset from all rows of the NGO table, and renders the directory page from the `ngo_directory.html` template
+
+### NGO Single
+The NGO_single view handles the rendering of a page that displays all of the information regarding a single NGO. It uses the `ngo_single.html` template
+
+### NGO Random
+The NGO_Random view works similarly to the NGO_Single view, except that it selects a random row from the NGO table.
+
+### SearchResults
+The SearchResults view handles the response to a user's search using the search bar. It matches user-supplied terms to fields in the NGO table, and displays records that match those terms. It renders the search_results page using the `search_results.html` template
+
+### Contact
+The Contact view renders the Contact page using the `contact.html` template. The Contact view also injects the MessageForm, and handles submission of that form.
+
+### About
+The About view renders the About page using the `about.html` template.
+
+### 404 and 500
+
+These views handle the app's response to HTTP 404 and 500 errors
+
+## URLS
+The project's `urls.py` file contains all URL paths.
+
+## Admin
+The project's `admin.py` is used to register the NGO and Message models in the admin panel. It applies the Summernote Rich Text Editor to the admin panel.
 
 # Technologies Used
 
 ### Languages:
-  * Python, for basic Django framework, database management
-  * HTML structure of the site.
-  * CSS style site
+  * Python
+  * HTML
+  * CSS
 
 
 ### Tools and Frameworks
@@ -230,15 +297,9 @@ Changes and entries to the workspace were then committed and pushed to this Gith
 1. Push any changes to Github after connecting your Heroku app to your repository.
 2. Add DISABLE_COLLECTSTATIC with a value of 1 to Heroku config vars.
 3. Select Github in Deployment method and choose 'Deploy branch' under Manual Deploy, ensuring your main branch is chosen.
-### Subsequent deployments:
-1. For subsequent deployments, I chose to 'Enable Automatic Deploys' which meant that anytime changes were pushed to my main Github branch, the Heroku project redeployed.
-2. For the final deployment, ensure you have a dependency to handle your static files. I used whitenoise, install with `pip install whitenoise` and add to MIDDLEWARE in settings.py and change STATIC_FILES_STORAGE variable to `STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'`
-3. Remove DISABLE_COLLECTSTATIC config var.
-4. Change DEBUG to False in settings.py
-5. Push changes and deploy.
 
 # Bugs
-All bugs are fixed, there are no bugs left to fix. 
+Several minor busg were encountered throughout development, mostly related to front-end styling with Bootstrap.
 
 # Testing
 A number of manual tests were carried out on this porject:
@@ -260,14 +321,24 @@ A number of manual tests were carried out on this porject:
 # Acknowledgements
 
 - Thank you to all the team member for the hard work and cooperation.
-  - Edmir Demaj - [GitHub Link](https://github.com/Edmir-Demaj)
-  - Maria Jones - [GitHub Link](https://github.com/mariacjones1)
-  - Adam Boley - [GitHub Link](https://github.com/AdamBoley)
-  - Alexander Glemme - [GitHub Link](https://github.com/alexanderglemme)
-  - Maximiliane Kaempffer - [GitHub Link](https://github.com/Maximiliane-K)
-  - Liam Pewton - [Github Link](https://github.com/lpewton)
-  - Linus Berger - [GitHub Link](https://github.com/Linber93)
+  - Edmir Demaj - [GitHub](https://github.com/Edmir-Demaj), [LinkedIn](https://www.linkedin.com/in/edmir-demaj-42a501196)
+  - Maria Jones - [GitHub](https://github.com/mariacjones1), [LinkedIn](https://www.linkedin.com/in/maria-jones-69727a12b/)
+  - Adam Boley - [GitHub](https://github.com/AdamBoley), [LinkedIn](https://www.linkedin.com/in/adam-boley-196420a8/)
+  - Alexander Glemme - [GitHub](https://github.com/alexanderglemme), [LinkedIn](https://www.linkedin.com/in/alexander-glemme/)
+  - Maximiliane Kaempffer - [GitHub](https://github.com/Maximiliane-K), [LinkedIn](https://www.linkedin.com/in/maximiliane-kaempffer/)
+  - Liam Pewton - [Github](https://github.com/lpewton), [LinkedIn](http://www.linkedin.com/in/liam-pewton-54b496172)
+  - Linus Berger - [GitHub](https://github.com/Linber93), [LinkedIn](https://www.linkedin.com/in/linus-berger-81a484216)
 
+# Particular Callouts
+
+This section will call out each team member for a particularly valuable contribution to the project
+- Linus was able to implement the carousel on the Index page, which cycles through 3 rows of the NGO table (he also single-handedly broke Sweden's tech industry)
+- Liam came up with the novel idea of injecting fields from the NGO table into an HTML table. This gives a structured look to the NGO Single page
+- Maximiliane populated the database almost single-handedly, providing the team with records to inject into the app
+- Edmir was invaluable as Scrum Master
+- Alexander proved to be an excellent front-end designer with Bootstrap
+- Adam set up the Django framework, and provided assistance with debugging and Bootstrap
+- Maria was excellent in documenting the project
 
 # Thank you !
  [Back to Top](#table-of-contents)
