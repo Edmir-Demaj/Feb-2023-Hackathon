@@ -1,10 +1,10 @@
 # Feb 2023 hackathon
 
-# Friends of Earth
+# NGO Directory
 ![Screenshot of the hero section](documentation/readme-images/hero-section.png)
 
 # Project Documentation
-## Welcome to [Friends of Earth](https://feb-2023-hackathon.herokuapp.com/)
+## Welcome to [NGO Directory](https://feb-2023-hackathon.herokuapp.com/)
 
 ## Mission
 The mission of our website is to act as an NGO directory, where users can find information about many different NGOs worldwide, and be directed to more information about each one if they choose. It is easy it is simple, all in one website. The present documentation will provide information to understanding the core design principles that enabled the development of the project. More specifically, details regarding the UX/UI development, application testing and deployment, bug fixes and the planned future features for the project.
